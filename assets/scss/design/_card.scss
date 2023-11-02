@@ -1,0 +1,154 @@
+@use "../utilities/all" as *;
+
+.card {
+  @include flexbox();
+  background-color: $White;
+  width: 600px ;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 15px 15px 25px $Pale-blue;
+
+  @include view-below(sm) {
+    flex-direction: column;
+    width: 100%;
+    border-radius: 0 0 20px 20px;
+  }
+
+  &>* {
+    flex: 1;
+  }
+
+  &--left {
+    background: linear-gradient(180deg, $Light-slate-blue, $Light-royal-blue);
+    @include flexbox(col, center, center);
+    padding: 1.8rem 2rem;
+    border-radius: 20px;
+
+    @include view-below(sm) {
+      border-radius: 0 0 20px 20px;
+    }
+
+    h1 {
+      font-size: 1.3rem;
+      color: $Light-lavender;
+      margin-bottom: 1.8rem;
+    }
+
+    .circle {
+      @include flexbox(col, center, center);
+      background: linear-gradient(180deg, hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      margin-bottom: 2rem;
+
+      h3 {
+        color: $White;
+        font-size: 4rem;
+      }
+
+      p {
+        color: $Light-lavender;
+      }
+    }
+
+    h2 {
+      color: $White;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      color: $Light-lavender;
+    }
+  }
+
+  &--right {
+    @include flexbox(col);
+    text-align: left;
+    padding: 1.8rem 2rem;
+
+    h2 {
+      font-size: 1.2rem;
+      color: $Dark-gray-blue;
+      margin-bottom: 1.4rem
+    }
+
+    .feature {
+      @include flexbox(row, space-between, center);
+
+      &--title {
+        @include flexbox(row);
+        padding: 13px 14px;
+
+        img {
+          width: 16px;
+          margin-right: 8px;
+        }
+      }
+
+      &--score {
+        padding-right: 14px;
+        span {
+          color: $Light-lavender;
+        }
+      }
+
+      &:nth-child(2) {
+        background-color: $Light-red-bg;
+        border-radius: 6px;
+        margin-bottom: 1rem;
+
+        .feature--title {
+          p {
+            color: $Light-red;
+          }
+        }
+      }
+
+      &:nth-child(3) {
+        background-color: $Orangey-yellow-bg;
+        border-radius: 6px;
+        margin-bottom: 1rem;
+
+        .feature--title {
+          p {
+            color: $Orangey-yellow;
+          }
+        }
+      }
+
+      &:nth-child(4) {
+        background-color: $Green-teal-bg;
+        border-radius: 6px;
+        margin-bottom: 1rem;
+
+        .feature--title {
+          p {
+            color: $Green-teal;
+          }
+        }
+      }
+
+      &:nth-child(5) {
+        background-color: $Cobalt-blue-bg;
+        border-radius: 6px;
+        margin-bottom: 2rem;
+
+        .feature--title {
+          p {
+            color: $Cobalt-blue;
+          }
+        }
+      }
+    }
+  }
+
+  .btn {
+    text-decoration: none;
+    text-align: center;
+    color: $White;
+    background-color: $Dark-gray-blue;
+    padding: 13px 14px;
+    border-radius: 30px;
+  }
+}

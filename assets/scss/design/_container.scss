@@ -1,0 +1,11 @@
+@use "../utilities/mixins" as *;
+@use "../utilities/variables" as *;
+
+.container {
+  min-height: 100vh;
+  @include flexbox(col, center, center);
+
+  @include view-below(sm) {
+    justify-content: flex-start;   
+  }
+}
